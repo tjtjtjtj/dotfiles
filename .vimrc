@@ -67,19 +67,18 @@ filetype plugin indent on
 NeoBundleCheck
 
 set background=dark
-" colorscheme hybrid
+" colorscheme jellybeans
 colorscheme jellybeans
 
 let g:neocomplete#enabe_at_startup = 1
-" vim-go  
-""
+"
 let g:go_fmt_command = "goimports"
-"" mapping  
-""" go runのキーマッピング  
+" mapping  
+" go runのキーマッピング  
 au FileType go nmap <Leader>gr <Plug>(go-run)  
-""" go testのキーマッピング  
+" go testのキーマッピング  
 au FileType go nmap <Leader>gt <Plug>(go-test)  
-"" highlight  
+" vim-go設定 highlight  
 let g:go_hightlight_functions = 1  
 let g:go_hightlight_methods = 1  
 let g:go_hightlight_structs = 1  
