@@ -5,10 +5,13 @@ set title "編集中のファイル名を表示する
 "set cindent  
 " 入力中のコマンドをステータスに表示する
 set showcmd
-" Use two spaces for indentation
-set tabstop=2 "インデントのスペースを2つ分に設定
+" タブ文字（”\t”）1つを、何文字の空白文字（半角スペース）にするかの設定
+set tabstop=2 
+" タブ文字（”\t”）をキーボードで入力した時に、何文字の空白文字（半角スペース）にするかの設定
 set softtabstop=2
+" Vimで自動インデントを行う際に、何文字の空白文字（半角スペース）にするかの設定
 set shiftwidth=2
+" タブ文字（”\t”）を空白文字（半角スペース）にする。softtabstop と共に使う。
 set expandtab
 
 "-------Look&Feel-----
@@ -22,6 +25,7 @@ syntax on
 if 0 | endif
 
 if &compatible
+  " 挙動を vi 互換ではなく、Vim のデフォルト設定にする
   set nocompatible               " Be iMproved
 endif
 
@@ -31,7 +35,7 @@ set runtimepath+=~/.vim/bundle/neobundle.vim/
 " Required:
 call neobundle#begin(expand('~/.vim/bundle/'))
 
-"Neobundleを利用するために :NeoBundleInstall を実行する
+" Neobundleを利用するために :NeoBundleInstall を実行する
 " Let NeoBundle manage NeoBundle
 " Required:
 NeoBundleFetch 'Shougo/neobundle.vim'
@@ -43,6 +47,16 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'fatih/vim-go'
 NeoBundle 'Shougo/neocomplete.vim'
 
+" カラースキーマ
+NeoBundle 'w0ng/vim-hybrid'
+NeoBundle 'tomasr/molokai'
+NeoBundle 'altercation/vim-colors-solarized'
+NeoBundle 'nanotech/jellybeans.vim'
+NeoBundle 'jpo/vim-railscasts-theme'
+
+" ファイルをtree表示してくれる
+NeoBundle 'scrooloose/nerdtree'
+
 call neobundle#end()
 
 " Required:
@@ -51,6 +65,10 @@ filetype plugin indent on
 " If there are uninstalled bundles found on startup,
 " this will conveniently prompt you to install them.
 NeoBundleCheck
+
+set background=dark
+" colorscheme hybrid
+colorscheme jellybeans
 
 let g:neocomplete#enabe_at_startup = 1
 " vim-go  
