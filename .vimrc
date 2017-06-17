@@ -14,6 +14,12 @@ set shiftwidth=2
 " タブ文字（”\t”）を空白文字（半角スペース）にする。softtabstop と共に使う。
 set expandtab
 
+" 行番号の色
+" au ColorScheme * highlight LineNr term=underline cterm=underline ctermfg=blue ctermbg=black
+au ColorScheme * highlight LineNr ctermfg=blue ctermbg=black
+" コメントの色を個別に設定
+au ColorScheme * highlight Comment ctermfg=67
+
 "-------Look&Feel-----
 ""TAB,EOFなどを可視化する
 "set list
