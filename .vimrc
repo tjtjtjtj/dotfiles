@@ -65,6 +65,8 @@ NeoBundle 'scrooloose/nerdtree'
 
 " markdown syntax
 NeoBundle 'plasticboy/vim-markdown'
+" ansible yaml
+NeoBundle 'chase/vim-ansible-yaml'
 
 call neobundle#end()
 
@@ -95,6 +97,9 @@ let g:go_hightlight_structs = 1
 let g:go_hightlight_interfaces = 1  
 let g:go_hightlight_build_constraints = 1  
 let GOPATH = '/root/go'
+
+" vimでファイル指定されていない時にNERDTreeを起動
+autocmd vimenter * if !argc() | NERDTree | endif
 
 " NERDTress File highlighting
 function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
