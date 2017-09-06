@@ -63,6 +63,9 @@ NeoBundle 'jpo/vim-railscasts-theme'
 " ファイルをtree表示してくれる
 NeoBundle 'scrooloose/nerdtree'
 
+" markdown syntax
+NeoBundle 'plasticboy/vim-markdown'
+
 call neobundle#end()
 
 " Required:
@@ -91,6 +94,7 @@ let g:go_hightlight_methods = 1
 let g:go_hightlight_structs = 1  
 let g:go_hightlight_interfaces = 1  
 let g:go_hightlight_build_constraints = 1  
+let GOPATH = '/root/go'
 
 " NERDTress File highlighting
 function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
@@ -110,3 +114,11 @@ call NERDTreeHighlightFile('css', 'cyan', 'none', 'cyan', '#151515')
 call NERDTreeHighlightFile('coffee', 'Red', 'none', 'red', '#151515')
 call NERDTreeHighlightFile('js', 'Red', 'none', '#ffa500', '#151515')
 call NERDTreeHighlightFile('php', 'Magenta', 'none', '#ff00ff', '#151515')
+
+" 隠しファイルを表示する
+let NERDTreeShowHidden = 1
+
+" ファイル指定で開かれた場合はNERDTreeは表示しない
+if !argc()
+  autocmd vimenter * NERDTree|normal gg3j
+endif
