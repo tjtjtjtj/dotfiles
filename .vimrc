@@ -68,6 +68,9 @@ NeoBundle 'plasticboy/vim-markdown'
 " ansible yaml
 NeoBundle 'chase/vim-ansible-yaml'
 
+" Git wrapper 
+NeoBundle 'tpope/vim-fugitive'
+
 call neobundle#end()
 
 " Required:
@@ -127,3 +130,14 @@ let NERDTreeShowHidden = 1
 if !argc()
   autocmd vimenter * NERDTree|normal gg3j
 endif
+
+" jqによりjsonを整形(コマンド:Jq)
+command! -nargs=? Jq call s:Jq(<f-args>)
+function! s:Jq(...)
+    if 0 == a:0
+        let l:arg = "."
+    else
+        let l:arg = a:1
+    endif
+    execute "%! jq \"" . l:arg . "\""
+endfunction
