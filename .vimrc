@@ -20,6 +20,9 @@ au ColorScheme * highlight LineNr ctermfg=blue ctermbg=black
 " コメントの色を個別に設定
 au ColorScheme * highlight Comment ctermfg=67
 
+" insert modeのESCをjjにキーバインド 
+inoremap <silent> jj <ESC> 
+
 "-------Look&Feel-----
 ""TAB,EOFなどを可視化する
 "set list
