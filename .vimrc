@@ -14,6 +14,11 @@ set shiftwidth=2
 " タブ文字（”\t”）を空白文字（半角スペース）にする。softtabstop と共に使う。
 set expandtab
 
+" 文字コード変換
+set encoding=utf-8
+set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
+set fileformats=unix,dos,mac
+
 " 行番号の色
 " au ColorScheme * highlight LineNr term=underline cterm=underline ctermfg=blue ctermbg=black
 au ColorScheme * highlight LineNr ctermfg=blue ctermbg=black
