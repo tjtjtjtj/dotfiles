@@ -14,9 +14,13 @@ set shiftwidth=2
 " タブ文字（”\t”）を空白文字（半角スペース）にする。softtabstop と共に使う。
 set expandtab
 
-" 文字コード変換
+" vimの内部文字コード
 set encoding=utf-8
-set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
+" 保存時の文字コード
+set fileencoding=utf-8
+" ファイルを読み込む時の、文字コード自動判別の順番
+set fileencodings=utf-8,cp932,euc-jp,sjis
+" ファイルのエンコーディング（改行コードの種類）
 set fileformats=unix,dos,mac
 
 " 行番号の色
